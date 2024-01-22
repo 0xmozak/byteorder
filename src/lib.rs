@@ -69,6 +69,8 @@ cases.
 
 #![deny(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]
+#![cfg_attr(feature = "std", feature(restricted_std))]
+
 // When testing under miri, we disable tests that take too long. But this
 // provokes lots of dead code warnings. So we just squash them.
 #![cfg_attr(miri, allow(dead_code, unused_macros))]
